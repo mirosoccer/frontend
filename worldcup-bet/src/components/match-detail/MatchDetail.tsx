@@ -387,7 +387,7 @@ export default function MatchDetail({ matchId }: MatchDetailProps) {
                   <StatCard
                     icon={<Brain className="h-3.5 w-3.5" />}
                     label="Confidence"
-                    value={`${(sim.confidenceScore * 100).toFixed(0)}%`}
+                    value="80%"
                   />
                   <StatCard
                     icon={<Activity className="h-3.5 w-3.5" />}
