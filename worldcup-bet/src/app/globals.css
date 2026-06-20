@@ -151,6 +151,47 @@
   .tabular-nums     { font-variant-numeric: tabular-nums; }
 }
 
+/* ── Wallet Adapter Modal Overrides ── */
+.wallet-adapter-modal-wrapper {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+.wallet-adapter-modal-container {
+  background-color: #111111 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+}
+.wallet-adapter-modal-title {
+  color: #ffffff !important;
+}
+.wallet-adapter-modal-list li {
+  background-color: transparent !important;
+}
+.wallet-adapter-modal-list .wallet-adapter-button {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 8px !important;
+}
+.wallet-adapter-modal-list .wallet-adapter-button:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.wallet-adapter-modal-button-close {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.wallet-adapter-modal-button-close svg {
+  fill: #ffffff !important;
+}
+.wallet-adapter-dropdown-list {
+  background-color: #111111 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+}
+.wallet-adapter-dropdown-list-item {
+  color: #ffffff !important;
+}
+.wallet-adapter-dropdown-list-item:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
 /* ── Keyframes (outside layers so they're always available) ── */
 @keyframes live-dot {
   0%, 100% { opacity: 1; }
