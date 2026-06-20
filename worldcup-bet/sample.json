@@ -1,0 +1,32 @@
+{  
+  "success": true,  
+  "data": {  
+    "report_id": "report_xxxx",  
+    "simulation_id": "sim_xxxx",  
+    "graph_id": "graph_xxxx",  
+    "simulation_requirement": "Predict Brazil vs France quarterfinal...",  
+    "status": "completed",  
+    "outline": {  
+      "title": "FIFA World Cup 2026 Quarterfinal Prediction Report",  
+      "summary": "Brazil predicted to win 2-1 with Vinicius Jr. as decisive factor",  
+      "sections": [  
+        {  
+          "title": "Match Outcome Prediction",  
+          "content": "Based on simulation of 500 agents across 48 hours..."  
+        },  
+        {  
+          "title": "Key Player Impact Analysis",  
+          "content": "Vinicius Jr. was the most discussed player..."  
+        },  
+        {  
+          "title": "Fan Sentiment Trajectory",  
+          "content": "Pre-match sentiment favored France at 58%..."  
+        }  
+      ]  
+    },  
+    "markdown_content": "# FIFA World Cup 2026 Quarterfinal Prediction Report\n\n> Brazil predicted to win 2-1...\n\n## Match Outcome Prediction\n\nBased on simulation...",  
+    "created_at": "2026-06-20T10:00:00",  
+    "completed_at": "2026-06-20T10:05:00",  
+    "error": null  
+  }  
+}
