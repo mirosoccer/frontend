@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-base:      #080808;
+    --bg-card:      #111111;
+    --bg-elevated:  #1a1a1a;
+    --bg-hover:     #222222;
+    --text-primary: #ffffff;
+    --text-secondary: #999999;
+    --text-muted:   #555555;
+    --bdr:          rgba(255, 255, 255, 0.08);
+    --bdr-bright:   rgba(255, 255, 255, 0.16);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #080808;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #080808; }
+  ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.12); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.25); }
+}
+
+@layer components {
+  /* ── Cards ── */
+  .bw-card {
+    background-color: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.75rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .bw-card:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .card-glow {
+    background-color: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.75rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card-glow:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  /* ── LIVE badge ── */
+  .badge-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 8px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000;
+    background-color: #fff;
+    border-radius: 9999px;
+  }
+  .badge-live::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #000;
+    animation: live-dot 1.4s ease-in-out infinite;
+  }
+
+  /* ── Bet slip selected ── */
+  .bet-slip-active {
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    background-color: rgba(255, 255, 255, 0.06) !important;
+  }
+
+  /* ── Timer ── */
+  .timer-live {
+    color: rgba(255, 255, 255, 0.7);
+    animation: timer-blink 2s ease-in-out infinite;
+  }
+
+  /* ── Shimmer skeleton ── */
+  .shimmer {
+    background: linear-gradient(90deg, #111111 25%, #1a1a1a 50%, #111111 75%);
+    background-size: 200% 100%;
+    animation: shimmer-slide 1.4s ease-in-out infinite;
+  }
+
+  /* ── Divider ── */
+  .divider-gold {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  }
+
+  /* ── Page bg aliases ── */
+  .bg-stadium  { background-color: #080808; }
+  .bg-spotlight { background-color: #080808; }
+
+  /* ── Gradient text alias (now white) ── */
+  .text-gradient-gold { color: #fff; }
+
+  /* ── MiroFish graph placeholder ── */
+  .graph-placeholder {
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 0.75rem;
+    background-color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .graph-placeholder::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle 2px at 20% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 100%),
+      radial-gradient(circle 2px at 50% 70%, rgba(255, 255, 255, 0.12) 0%, transparent 100%),
+      radial-gradient(circle 2px at 75% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 100%),
+      radial-gradient(circle 2px at 35% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 100%),
+      radial-gradient(circle 2px at 80% 60%, rgba(255, 255, 255, 0.12) 0%, transparent 100%);
+    animation: graph-pulse 4s ease-in-out infinite alternate;
+  }
+}
+
+@layer utilities {
+  /* Utility aliases for old component references */
+  .text-gold        { color: #fff; }
+  .text-gold-dim    { color: rgba(255, 255, 255, 0.5); }
+  .text-gold-bright { color: #fff; }
+  .bg-base          { background-color: #080808; }
+  .bg-card          { background-color: #111111; }
+  .bg-elevated      { background-color: #1a1a1a; }
+  .border-theme     { border-color: rgba(255, 255, 255, 0.08); }
+  .tabular-nums     { font-variant-numeric: tabular-nums; }
+}
+
+/* ── Keyframes (outside layers so they're always available) ── */
+@keyframes live-dot {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.3; }
+}
+
+@keyframes timer-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; }
+}
+
+@keyframes shimmer-slide {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes graph-pulse {
+  0%   { opacity: 0.4; }
+  100% { opacity: 1; }
+}
